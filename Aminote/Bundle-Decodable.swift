@@ -27,7 +27,7 @@ extension Bundle {
         decoder.keyDecodingStrategy = keyDecodingStrategy
 
         do {
-            return try decoder.decode(type, from: data)
+            return try decoder.decode(T.self, from: data)
         } catch DecodingError.keyNotFound(let key, let context) {
             fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' - \(context.debugDescription)")
         } catch DecodingError.typeMismatch(_, let context) {
