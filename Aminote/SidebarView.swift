@@ -29,7 +29,7 @@ struct SidebarView: View {
             Section("Smart Filters") {
                 ForEach(smartFilters) { filter in
                     NavigationLink(value: filter) {
-                        Label(filter.name, systemImage: filter.icon)
+                        Label(LocalizedStringKey(filter.name), systemImage: filter.icon)
                     }
                 }
             }
@@ -38,7 +38,7 @@ struct SidebarView: View {
                 ForEach(tagFilters) { filter in
                     NavigationLink(value: filter) {
                         Label(filter.name, systemImage: filter.icon)
-                            .badge(filter.tag?.tagActiveIssues.count ?? 0)
+                            .badge(filter.activeIssuesCount)
                             .contextMenu {
                                 Button {
                                     rename(filter)
@@ -52,6 +52,9 @@ struct SidebarView: View {
                                     Label("Delete", systemImage: "trash")
                                 }
                             }
+                            .accessibilityElement()
+                            .accessibilityLabel(filter.name)
+                            .accessibilityHint("\(filter.activeIssuesCount) issue")
                     }
                 }
                 .onDelete(perform: delete)
