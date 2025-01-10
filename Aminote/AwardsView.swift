@@ -16,7 +16,7 @@ struct AwardsView: View {
     var columns: [GridItem] {
         [GridItem(.adaptive(minimum: 100, maximum: 100))]
     }
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {

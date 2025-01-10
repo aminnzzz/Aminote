@@ -52,7 +52,6 @@ extension Issue {
     static var example: Issue {
         let dateController = DataController(inMemory: true)
         let viewContext = dateController.container.viewContext
-        
         let issue = Issue(context: viewContext)
         issue.title = "Example Issue"
         issue.content = "This is an example issue."
