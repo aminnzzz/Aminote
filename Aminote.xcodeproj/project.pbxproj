@@ -14,7 +14,7 @@
 		71AFBE392CE070E500A1BA18 /* Exceptions for "Aminote" folder in "Aminote" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Configurations/Info.plist,
 			);
 			target = 7156779F2CCB49A200B8AF45 /* Aminote */;
 		};
@@ -281,7 +281,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Aminote/Aminote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Aminote/Configurations/Aminote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aminote/Preview Content\"";
@@ -322,7 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Aminote/Aminote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Aminote/Configurations/Aminote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aminote/Preview Content\"";
