@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "A3ADBF55-1D11-49BD-AF76-9B52D95BBC3A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Aminote.xcodeproj",
+      "identifier" : "7156779F2CCB49A200B8AF45",
+      "name" : "Aminote"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Aminote.xcodeproj",
+        "identifier" : "711807742D474B9400640708",
+        "name" : "AminoteTests"
+      }
+    }
+  ],
+  "version" : 1
+}

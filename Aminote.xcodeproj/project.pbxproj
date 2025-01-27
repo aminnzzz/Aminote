@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		719D6EB82D474C3500278FA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 715677982CCB49A200B8AF45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7156779F2CCB49A200B8AF45;
+			remoteInfo = Aminote;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		715677A02CCB49A200B8AF45 /* Aminote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aminote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		719D6EB42D474C3500278FA0 /* AminoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AminoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +40,22 @@
 			path = Aminote;
 			sourceTree = "<group>";
 		};
+		719D6EB52D474C3500278FA0 /* AminoteTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AminoteTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7156779D2CCB49A200B8AF45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		719D6EB12D474C3500278FA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				715677A22CCB49A200B8AF45 /* Aminote */,
+				719D6EB52D474C3500278FA0 /* AminoteTests */,
 				715677A12CCB49A200B8AF45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				715677A02CCB49A200B8AF45 /* Aminote.app */,
+				719D6EB42D474C3500278FA0 /* AminoteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +109,29 @@
 			productReference = 715677A02CCB49A200B8AF45 /* Aminote.app */;
 			productType = "com.apple.product-type.application";
 		};
+		719D6EB32D474C3500278FA0 /* AminoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 719D6EBC2D474C3500278FA0 /* Build configuration list for PBXNativeTarget "AminoteTests" */;
+			buildPhases = (
+				719D6EB02D474C3500278FA0 /* Sources */,
+				719D6EB12D474C3500278FA0 /* Frameworks */,
+				719D6EB22D474C3500278FA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				719D6EB92D474C3500278FA0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				719D6EB52D474C3500278FA0 /* AminoteTests */,
+			);
+			name = AminoteTests;
+			packageProductDependencies = (
+			);
+			productName = AminoteTests;
+			productReference = 719D6EB42D474C3500278FA0 /* AminoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -91,11 +139,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					7156779F2CCB49A200B8AF45 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					719D6EB32D474C3500278FA0 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 7156779F2CCB49A200B8AF45;
 					};
 				};
 			};
@@ -115,12 +167,20 @@
 			projectRoot = "";
 			targets = (
 				7156779F2CCB49A200B8AF45 /* Aminote */,
+				719D6EB32D474C3500278FA0 /* AminoteTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7156779E2CCB49A200B8AF45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		719D6EB22D474C3500278FA0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,7 +219,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		719D6EB02D474C3500278FA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		719D6EB92D474C3500278FA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7156779F2CCB49A200B8AF45 /* Aminote */;
+			targetProxy = 719D6EB82D474C3500278FA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		715677AD2CCB49A300B8AF45 /* Debug */ = {
@@ -290,7 +365,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Aminote/Info.plist;
+				INFOPLIST_FILE = Aminote/Configurations/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -331,7 +406,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Aminote/Info.plist;
+				INFOPLIST_FILE = Aminote/Configurations/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -358,6 +433,47 @@
 			};
 			name = Release;
 		};
+		719D6EBA2D474C3500278FA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45KK5U5H4J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amin.nazemzadeh.AminoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aminote.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aminote";
+			};
+			name = Debug;
+		};
+		719D6EBB2D474C3500278FA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45KK5U5H4J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amin.nazemzadeh.AminoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aminote.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aminote";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +491,15 @@
 			buildConfigurations = (
 				715677B02CCB49A300B8AF45 /* Debug */,
 				715677B12CCB49A300B8AF45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		719D6EBC2D474C3500278FA0 /* Build configuration list for PBXNativeTarget "AminoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				719D6EBA2D474C3500278FA0 /* Debug */,
+				719D6EBB2D474C3500278FA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
