@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AminoteUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7156779F2CCB49A200B8AF45</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>719D6ED12D53B38000278FA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
