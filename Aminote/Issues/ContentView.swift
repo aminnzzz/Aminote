@@ -8,44 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var dataController: DataController
+    @StateObject var viewModel: ViewModel
+
+    init(dataController: DataController) {
+        let viewModel = ViewModel(dataController: dataController)
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
-        List(selection: $dataController.selectedIssue) {
-            ForEach(dataController.issuesForSelectedFilter()) { issue in
+        List(selection: $viewModel.selectedIssue) {
+            ForEach(viewModel.dataController.issuesForSelectedFilter()) { issue in
                 IssueRow(issue: issue)
             }
-            .onDelete(perform: delete)
+            .onDelete(perform: viewModel.delete)
         }
         .navigationTitle("Issues")
         .searchable(
-            text: $dataController.filterText,
-            tokens: $dataController.filterTokens,
+            text: $viewModel.filterText,
+            tokens: $viewModel.filterTokens,
             prompt: "Filter issues, or type # to add tags"
         ) { tag in
             Text(tag.tagName)
         }
         .searchSuggestions {
-            ForEach(dataController.suggestedFilterTokens) { token in
+            ForEach(viewModel.suggestedFilterTokens) { token in
                 Text(token.tagName).onTapGesture {
-                    dataController.filterTokens.append(token)
-                    dataController.filterText = ""
+                    viewModel.filterTokens.append(token)
+                    viewModel.filterText = ""
                 }
             }
         }
         .toolbar(content: ContentViewToolbar.init)
     }
-
-    func delete(_ offsets: IndexSet) {
-        let issues = dataController.issuesForSelectedFilter()
-
-        for offset in offsets {
-            let issue = issues[offset]
-            dataController.delete(issue)
-        }
-    }
 }
 
 #Preview {
-    ContentView()
+    ContentView(dataController: .preview)
 }
