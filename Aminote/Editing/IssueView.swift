@@ -11,6 +11,10 @@ struct IssueView: View {
     @EnvironmentObject var dataController: DataController
     @ObservedObject var issue: Issue
 
+    @State private var showingNotificationsAlert = false
+
+    @Environment(\.openURL) var openURL
+
     var body: some View {
         Form {
             Section {
@@ -48,6 +52,18 @@ struct IssueView: View {
                     )
                 }
             }
+
+            Section("Reminders") {
+                Toggle("Show reminders", isOn: $issue.reminderEnabled.animation())
+
+                if issue.reminderEnabled {
+                    DatePicker(
+                        "Reminder time",
+                        selection: $issue.issueReminderTime,
+                        displayedComponents: .hourAndMinute
+                    )
+                }
+            }
         }
         .disabled(issue.isDeleted)
         .onReceive(issue.objectWillChange) { _ in
@@ -56,6 +72,35 @@ struct IssueView: View {
         .onSubmit(dataController.save)
         .toolbar {
             IssueViewToolbar(issue: issue)
+        }
+        .alert("Oops!", isPresented: $showingNotificationsAlert) {
+            Button("Check Settigns", action: showAppSettings)
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("There was a problem setting your notifications. Please check you have notifications enabled.")
+        }
+        .onChange(of: issue.reminderEnabled, updateReminder)
+        .onChange(of: issue.reminderTime, updateReminder)
+    }
+
+    func showAppSettings() {
+        guard let settingsURL = URL(string: UIApplication.openNotificationSettingsURLString) else { return }
+
+        openURL(settingsURL)
+    }
+
+    func updateReminder() {
+        dataController.removeReminder(for: issue)
+
+        Task { @MainActor in
+            if issue.reminderEnabled {
+                let success = await dataController.addReminder(for: issue)
+
+                if !success {
+                    issue.reminderEnabled = false
+                    showingNotificationsAlert = true
+                }
+            }
         }
     }
 }
