@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.requestReview) var requestReview
     @StateObject var viewModel: ViewModel
 
     init(dataController: DataController) {
@@ -39,6 +40,13 @@ struct ContentView: View {
             }
         }
         .toolbar(content: ContentViewToolbar.init)
+        .onAppear(perform: askForReview)
+    }
+
+    func askForReview() {
+        if viewModel.shouldRequestReview {
+            requestReview()
+        }
     }
 }
 

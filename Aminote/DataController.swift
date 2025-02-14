@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import StoreKit
 import SwiftUI
 
 enum SortType: String {
@@ -42,6 +43,9 @@ class DataController: ObservableObject {
 
     /// The UserDefault's suite where we're saving user data.
     let defaults: UserDefaults
+
+    /// The store kit products we loaded from the store
+    @Published var products = [Product]()
 
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
@@ -339,6 +343,9 @@ class DataController: ObservableObject {
             let request = Tag.fetchRequest()
             let awardCount = count(for: request)
             return awardCount >= award.value
+
+        case "unlock":
+            return fullVersionUnlocked
 
         default:
 //            fatalError("Unknown award criterion: \(award.criterion)")
