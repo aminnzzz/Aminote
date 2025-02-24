@@ -15,6 +15,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>com.amin.nazemzadeh.Aminote.newIssue</string>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
