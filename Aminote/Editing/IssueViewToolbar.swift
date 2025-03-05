@@ -69,7 +69,6 @@ struct IssueViewToolbar: View {
                     ],
                     relativeTime: 0
                 )
-                
                 let event1 = CHHapticEvent(
                     eventType: .hapticTransient,
                     parameters: [

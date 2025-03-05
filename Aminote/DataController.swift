@@ -8,6 +8,7 @@
 import CoreData
 import StoreKit
 import SwiftUI
+import WidgetKit
 
 enum SortType: String {
     case dateCreated = "creationDate"
@@ -101,6 +102,11 @@ class DataController: ObservableObject {
         // so our data is destroyed after the app finishes running.
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
+        } else {
+            let groupID = "group.com.amin.nazemzadeh.Aminote"
+            if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupID) {
+                container.persistentStoreDescriptions.first?.url = url.appending(path: "Main.sqlite")
+            }
         }
 
         container.viewContext.automaticallyMergesChangesFromParent = true
@@ -113,6 +119,10 @@ class DataController: ObservableObject {
             true as NSNumber,
             forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
         )
+        container.persistentStoreDescriptions.first?.setOption(
+            true as NSNumber,
+            forKey: NSPersistentHistoryTrackingKey
+        )
         NotificationCenter.default.addObserver(
             forName: .NSPersistentStoreRemoteChange,
             object: container.persistentStoreCoordinator,
@@ -120,16 +130,11 @@ class DataController: ObservableObject {
             using: remoteStoreChanged
         )
 
-        container.loadPersistentStores {
-            [weak self] _,
-            error in
+        container.loadPersistentStores { [weak self] _, error in
             if let error {
                 fatalError("Fatal error loading stores: \(error.localizedDescription)")
             }
-            
             if let description = self?.container.persistentStoreDescriptions.first {
-                description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-                
                 if let coordinator = self?.container.persistentStoreCoordinator {
                     self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
                         forStoreWith: description,
@@ -180,6 +185,7 @@ class DataController: ObservableObject {
     func save() {
         saveTask?.cancel()
         if container.viewContext.hasChanges {
+            WidgetCenter.shared.reloadAllTimelines()
             try? container.viewContext.save()
         }
     }
@@ -326,38 +332,26 @@ class DataController: ObservableObject {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
 
-    func hasEarned(award: Award) -> Bool {
-        switch award.criterion {
-        case "issues":
-            let request = Issue.fetchRequest()
-            let awardCount = count(for: request)
-            return awardCount >= award.value
-
-        case "closed":
-            let request = Issue.fetchRequest()
-            request.predicate = NSPredicate(format: "completed = true")
-            let awardCount = count(for: request)
-            return awardCount >= award.value
-
-        case "tags":
-            let request = Tag.fetchRequest()
-            let awardCount = count(for: request)
-            return awardCount >= award.value
-
-        case "unlock":
-            return fullVersionUnlocked
-
-        default:
-//            fatalError("Unknown award criterion: \(award.criterion)")
-            return false
-
-        }
-    }
-
     func issue(with uniqueIdentifier: String) -> Issue? {
         guard let url = URL(string: uniqueIdentifier) else { return nil }
-        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else { return nil }
+        guard let id = container.persistentStoreCoordinator.managedObjectID(
+            forURIRepresentation: url
+        ) else {
+            return nil
+        }
 
         return try? container.viewContext.existingObject(with: id) as? Issue
+    }
+
+    func fetchRequestForTopIssues(count: Int) -> NSFetchRequest<Issue> {
+        let request = Issue.fetchRequest()
+        request.predicate = NSPredicate(format: "completed = false")
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Issue.priority, ascending: false)]
+        request.fetchLimit = count
+        return request
+    }
+
+    func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+        (try? container.viewContext.fetch(fetchRequest)) ?? []
     }
 }
