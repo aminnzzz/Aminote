@@ -1,5 +1,5 @@
 //
-//  AminoteWidget.swift
+//  SimpleAminoteWidget.swift
 //  AminoteWidget
 //
 //  Created by amin nazemzadeh on 3/4/25.
@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
+struct SimpleProvider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date.now, issues: [.example])
     }
@@ -40,8 +40,8 @@ struct SimpleEntry: TimelineEntry {
     let issues: [Issue]
 }
 
-struct AminoteWidgetEntryView: View {
-    var entry: Provider.Entry
+struct SimpleAminoteWidgetEntryView: View {
+    var entry: SimpleProvider.Entry
 
     var body: some View {
         VStack {
@@ -57,16 +57,16 @@ struct AminoteWidgetEntryView: View {
     }
 }
 
-struct AminoteWidget: Widget {
-    let kind: String = "AminoteWidget"
+struct SimpleAminoteWidget: Widget {
+    let kind: String = "SimpleAminoteWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: SimpleProvider()) { entry in
             if #available(iOS 17.0, *) {
-                AminoteWidgetEntryView(entry: entry)
+                SimpleAminoteWidgetEntryView(entry: entry)
                     .containerBackground(.fill.tertiary, for: .widget)
             } else {
-                AminoteWidgetEntryView(entry: entry)
+                SimpleAminoteWidgetEntryView(entry: entry)
                     .padding()
                     .background()
             }
@@ -78,7 +78,7 @@ struct AminoteWidget: Widget {
 }
 
 #Preview(as: .systemSmall) {
-    AminoteWidget()
+    SimpleAminoteWidget()
 } timeline: {
     SimpleEntry(date: .now, issues: [.example])
     SimpleEntry(date: .now, issues: [.example])

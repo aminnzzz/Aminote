@@ -78,6 +78,7 @@
 		71F48E352D780EDA00449BC0 /* Exceptions for "Aminote" folder in "AminoteWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"/Localized: Localization/Localizable.strings",
 				Configurations/Main.xcdatamodeld,
 				"DataController-StoreKit.swift",
 				DataController.swift,

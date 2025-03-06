@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct AminoteWidgetBundle: WidgetBundle {
     var body: some Widget {
-        AminoteWidget()
-        AminoteWidgetControl()
+        SimpleAminoteWidget()
+        ComplexAminoteWidget()
     }
 }
