@@ -71,8 +71,9 @@ struct AminoteWidget: Widget {
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Up next...")
+        .description("Your #1 top-priority issue.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
