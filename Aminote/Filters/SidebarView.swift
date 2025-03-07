@@ -28,6 +28,7 @@ struct SidebarView: View {
                 .onDelete(perform: viewModel.delete)
             }
         }
+        .macFrame(minWidth: 220)
         .toolbar(content: SidebarViewToolbar.init)
         .alert("Rename tag", isPresented: $viewModel.renamingTag) {
             Button("OK", action: viewModel.completeRename)

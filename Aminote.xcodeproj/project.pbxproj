@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		71F48E1F2D780D6400449BC0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E1E2D780D6400449BC0 /* WidgetKit.framework */; };
 		71F48E212D780D6400449BC0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E202D780D6400449BC0 /* SwiftUI.framework */; };
-		71F48E2E2D780D6600449BC0 /* AminoteWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 71F48E1C2D780D6400449BC0 /* AminoteWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		71F48E2E2D780D6600449BC0 /* AminoteWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 71F48E1C2D780D6400449BC0 /* AminoteWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		71F48E4B2D7AACFC00449BC0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E1E2D780D6400449BC0 /* WidgetKit.framework */; };
+		71F48E4C2D7AACFC00449BC0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E202D780D6400449BC0 /* SwiftUI.framework */; };
+		71F48E582D7AACFD00449BC0 /* AminoteWidgetMacExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */; platformFilters = (macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,13 @@
 			remoteGlobalIDString = 71F48E1B2D780D6400449BC0;
 			remoteInfo = AminoteWidgetExtension;
 		};
+		71F48E562D7AACFD00449BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 715677982CCB49A200B8AF45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71F48E492D7AACFB00449BC0;
+			remoteInfo = AminoteWidgetMacExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +53,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				71F48E582D7AACFD00449BC0 /* AminoteWidgetMacExtension.appex in Embed Foundation Extensions */,
 				71F48E2E2D780D6600449BC0 /* AminoteWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -58,6 +69,7 @@
 		71F48E1E2D780D6400449BC0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		71F48E202D780D6400449BC0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		71F48E3F2D78152400449BC0 /* AminoteWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AminoteWidgetExtension.entitlements; sourceTree = "<group>"; };
+		71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AminoteWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +100,34 @@
 			);
 			target = 71F48E1B2D780D6400449BC0 /* AminoteWidgetExtension */;
 		};
+		71F48E5C2D7AACFD00449BC0 /* Exceptions for "AminoteWidgetMac" folder in "AminoteWidgetMacExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */;
+		};
+		71F48E672D7AAE6E00449BC0 /* Exceptions for "AminoteWidget" folder in "AminoteWidgetMacExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AminoteWidgetBundle.swift,
+				ComplexAminoteWidget.swift,
+				SimpleAminoteWidget.swift,
+			);
+			target = 71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */;
+		};
+		71F48E682D7AAE6E00449BC0 /* Exceptions for "Aminote" folder in "AminoteWidgetMacExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Configurations/Main.xcdatamodeld,
+				"DataController-StoreKit.swift",
+				DataController.swift,
+				"Extensions/Issue-CoreDataHelpers.swift",
+				"Extensions/Tag-CoreDataHelpers.swift",
+				Filters/Filter.swift,
+			);
+			target = 71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -96,6 +136,7 @@
 			exceptions = (
 				71AFBE392CE070E500A1BA18 /* Exceptions for "Aminote" folder in "Aminote" target */,
 				71F48E352D780EDA00449BC0 /* Exceptions for "Aminote" folder in "AminoteWidgetExtension" target */,
+				71F48E682D7AAE6E00449BC0 /* Exceptions for "Aminote" folder in "AminoteWidgetMacExtension" target */,
 			);
 			path = Aminote;
 			sourceTree = "<group>";
@@ -114,8 +155,17 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				71F48E322D780D6600449BC0 /* Exceptions for "AminoteWidget" folder in "AminoteWidgetExtension" target */,
+				71F48E672D7AAE6E00449BC0 /* Exceptions for "AminoteWidget" folder in "AminoteWidgetMacExtension" target */,
 			);
 			path = AminoteWidget;
+			sourceTree = "<group>";
+		};
+		71F48E4D2D7AACFC00449BC0 /* AminoteWidgetMac */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				71F48E5C2D7AACFD00449BC0 /* Exceptions for "AminoteWidgetMac" folder in "AminoteWidgetMacExtension" target */,
+			);
+			path = AminoteWidgetMac;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -151,6 +201,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71F48E472D7AACFB00449BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71F48E4C2D7AACFC00449BC0 /* SwiftUI.framework in Frameworks */,
+				71F48E4B2D7AACFC00449BC0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -162,6 +221,7 @@
 				719D6EB52D474C3500278FA0 /* AminoteTests */,
 				719D6ED32D53B38000278FA0 /* AminoteUITests */,
 				71F48E222D780D6400449BC0 /* AminoteWidget */,
+				71F48E4D2D7AACFC00449BC0 /* AminoteWidgetMac */,
 				71F48E1D2D780D6400449BC0 /* Frameworks */,
 				715677A12CCB49A200B8AF45 /* Products */,
 			);
@@ -174,6 +234,7 @@
 				719D6EB42D474C3500278FA0 /* AminoteTests.xctest */,
 				719D6ED22D53B38000278FA0 /* AminoteUITests.xctest */,
 				71F48E1C2D780D6400449BC0 /* AminoteWidgetExtension.appex */,
+				71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,6 +265,7 @@
 			);
 			dependencies = (
 				71F48E2D2D780D6600449BC0 /* PBXTargetDependency */,
+				71F48E572D7AACFD00449BC0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				715677A22CCB49A200B8AF45 /* Aminote */,
@@ -283,6 +345,28 @@
 			productReference = 71F48E1C2D780D6400449BC0 /* AminoteWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71F48E592D7AACFD00449BC0 /* Build configuration list for PBXNativeTarget "AminoteWidgetMacExtension" */;
+			buildPhases = (
+				71F48E462D7AACFB00449BC0 /* Sources */,
+				71F48E472D7AACFB00449BC0 /* Frameworks */,
+				71F48E482D7AACFB00449BC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				71F48E4D2D7AACFC00449BC0 /* AminoteWidgetMac */,
+			);
+			name = AminoteWidgetMacExtension;
+			packageProductDependencies = (
+			);
+			productName = AminoteWidgetMacExtension;
+			productReference = 71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -307,6 +391,9 @@
 					71F48E1B2D780D6400449BC0 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					71F48E492D7AACFB00449BC0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 7156779B2CCB49A200B8AF45 /* Build configuration list for PBXProject "Aminote" */;
@@ -328,6 +415,7 @@
 				719D6EB32D474C3500278FA0 /* AminoteTests */,
 				719D6ED12D53B38000278FA0 /* AminoteUITests */,
 				71F48E1B2D780D6400449BC0 /* AminoteWidgetExtension */,
+				71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -355,6 +443,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		71F48E1A2D780D6400449BC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71F48E482D7AACFB00449BC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -414,6 +509,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71F48E462D7AACFB00449BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -429,8 +531,17 @@
 		};
 		71F48E2D2D780D6600449BC0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 71F48E1B2D780D6400449BC0 /* AminoteWidgetExtension */;
 			targetProxy = 71F48E2C2D780D6600449BC0 /* PBXContainerItemProxy */;
+		};
+		71F48E572D7AACFD00449BC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				macos,
+			);
+			target = 71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */;
+			targetProxy = 71F48E562D7AACFD00449BC0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -772,6 +883,66 @@
 			};
 			name = Release;
 		};
+		71F48E5A2D7AACFD00449BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AminoteWidgetMac/AminoteWidgetMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45KK5U5H4J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AminoteWidgetMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AminoteWidgetMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amin.nazemzadeh.Aminote.AminoteWidgetMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		71F48E5B2D7AACFD00449BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = AminoteWidgetMac/AminoteWidgetMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45KK5U5H4J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AminoteWidgetMac/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AminoteWidgetMac;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amin.nazemzadeh.Aminote.AminoteWidgetMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -816,6 +987,15 @@
 			buildConfigurations = (
 				71F48E302D780D6600449BC0 /* Debug */,
 				71F48E312D780D6600449BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71F48E592D7AACFD00449BC0 /* Build configuration list for PBXNativeTarget "AminoteWidgetMacExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71F48E5A2D7AACFD00449BC0 /* Debug */,
+				71F48E5B2D7AACFD00449BC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
