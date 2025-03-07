@@ -13,6 +13,7 @@
 		71F48E4B2D7AACFC00449BC0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E1E2D780D6400449BC0 /* WidgetKit.framework */; };
 		71F48E4C2D7AACFC00449BC0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E202D780D6400449BC0 /* SwiftUI.framework */; };
 		71F48E582D7AACFD00449BC0 /* AminoteWidgetMacExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */; platformFilters = (macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		71F48E6E2D7AB7E000449BC0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 71F48E6D2D7AB7E000449BC0 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		71F48E202D780D6400449BC0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		71F48E3F2D78152400449BC0 /* AminoteWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AminoteWidgetExtension.entitlements; sourceTree = "<group>"; };
 		71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AminoteWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		71F48E6D2D7AB7E000449BC0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -216,6 +218,7 @@
 		715677972CCB49A200B8AF45 = {
 			isa = PBXGroup;
 			children = (
+				71F48E6D2D7AB7E000449BC0 /* Credits.rtf */,
 				71F48E3F2D78152400449BC0 /* AminoteWidgetExtension.entitlements */,
 				715677A22CCB49A200B8AF45 /* Aminote */,
 				719D6EB52D474C3500278FA0 /* AminoteTests */,
@@ -425,6 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F48E6E2D7AB7E000449BC0 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
