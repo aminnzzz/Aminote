@@ -14,6 +14,7 @@
 		71F48E4C2D7AACFC00449BC0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F48E202D780D6400449BC0 /* SwiftUI.framework */; };
 		71F48E582D7AACFD00449BC0 /* AminoteWidgetMacExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */; platformFilters = (macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		71F48E6E2D7AB7E000449BC0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 71F48E6D2D7AB7E000449BC0 /* Credits.rtf */; };
+		71F48F6A2D7D60CE00449BC0 /* AminoteWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 71F48F5D2D7D60CD00449BC0 /* AminoteWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,13 @@
 			remoteGlobalIDString = 71F48E492D7AACFB00449BC0;
 			remoteInfo = AminoteWidgetMacExtension;
 		};
+		71F48F682D7D60CE00449BC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 715677982CCB49A200B8AF45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71F48F5C2D7D60CD00449BC0;
+			remoteInfo = "AminoteWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +68,17 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71F48F6B2D7D60CE00449BC0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				71F48F6A2D7D60CE00449BC0 /* AminoteWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +91,7 @@
 		71F48E3F2D78152400449BC0 /* AminoteWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AminoteWidgetExtension.entitlements; sourceTree = "<group>"; };
 		71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AminoteWidgetMacExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F48E6D2D7AB7E000449BC0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		71F48F5D2D7D60CD00449BC0 /* AminoteWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AminoteWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -130,6 +150,52 @@
 			);
 			target = 71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */;
 		};
+		71F48F8E2D7D60FC00449BC0 /* Exceptions for "Aminote" folder in "AminoteWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"/Localized: Awards/Awards.json",
+				"/Localized: Localization/Localizable.strings",
+				"/Localized: Localization/Localizable.stringsdict",
+				AminoteApp.swift,
+				AppDelegate.swift,
+				Assets.xcassets,
+				Awards/Award.swift,
+				Awards/AwardsView.swift,
+				Colors.xcassets,
+				Configurations/Main.xcdatamodeld,
+				"DataController-Awards.swift",
+				"DataController-Notifications.swift",
+				"DataController-StoreKit.swift",
+				DataController.swift,
+				Editing/DetailView.swift,
+				Editing/IssueView.swift,
+				Editing/IssueViewToolbar.swift,
+				Editing/NoIssueView.swift,
+				Editing/TagsMenuView.swift,
+				"Extensions/Bundle-Decodable.swift",
+				"Extensions/Issue-CoreDataHelpers.swift",
+				"Extensions/Tag-CoreDataHelpers.swift",
+				Filters/Filter.swift,
+				Filters/SidebarView.swift,
+				Filters/SidebarViewModel.swift,
+				Filters/SidebarViewToolbar.swift,
+				Filters/SmartFilterRow.swift,
+				Filters/UserFilterRow.swift,
+				Issues/ContentView.swift,
+				Issues/ContentViewModel.swift,
+				Issues/ContentViewToolbar.swift,
+				Issues/IssueRow.swift,
+				Issues/IssueRowViewModel.swift,
+				Issues/IssueRowWatch.swift,
+				PlatformAdjustments/InlineNavigationBar.swift,
+				PlatformAdjustments/MacFrame.swift,
+				PlatformAdjustments/NumberBadge.swift,
+				PlatformAdjustments/ToolbarItemAdjustment.swift,
+				SceneDelegate.swift,
+				Store/StoreView.swift,
+			);
+			target = 71F48F5C2D7D60CD00449BC0 /* AminoteWatch Watch App */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -139,6 +205,7 @@
 				71AFBE392CE070E500A1BA18 /* Exceptions for "Aminote" folder in "Aminote" target */,
 				71F48E352D780EDA00449BC0 /* Exceptions for "Aminote" folder in "AminoteWidgetExtension" target */,
 				71F48E682D7AAE6E00449BC0 /* Exceptions for "Aminote" folder in "AminoteWidgetMacExtension" target */,
+				71F48F8E2D7D60FC00449BC0 /* Exceptions for "Aminote" folder in "AminoteWatch Watch App" target */,
 			);
 			path = Aminote;
 			sourceTree = "<group>";
@@ -168,6 +235,11 @@
 				71F48E5C2D7AACFD00449BC0 /* Exceptions for "AminoteWidgetMac" folder in "AminoteWidgetMacExtension" target */,
 			);
 			path = AminoteWidgetMac;
+			sourceTree = "<group>";
+		};
+		71F48F5E2D7D60CD00449BC0 /* AminoteWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "AminoteWatch Watch App";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -212,6 +284,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71F48F5A2D7D60CD00449BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -225,6 +304,7 @@
 				719D6ED32D53B38000278FA0 /* AminoteUITests */,
 				71F48E222D780D6400449BC0 /* AminoteWidget */,
 				71F48E4D2D7AACFC00449BC0 /* AminoteWidgetMac */,
+				71F48F5E2D7D60CD00449BC0 /* AminoteWatch Watch App */,
 				71F48E1D2D780D6400449BC0 /* Frameworks */,
 				715677A12CCB49A200B8AF45 /* Products */,
 			);
@@ -238,6 +318,7 @@
 				719D6ED22D53B38000278FA0 /* AminoteUITests.xctest */,
 				71F48E1C2D780D6400449BC0 /* AminoteWidgetExtension.appex */,
 				71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */,
+				71F48F5D2D7D60CD00449BC0 /* AminoteWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,12 +344,14 @@
 				7156779E2CCB49A200B8AF45 /* Resources */,
 				71F2B45C2D3181F900579B42 /* Swiftlint */,
 				71F48E332D780D6600449BC0 /* Embed Foundation Extensions */,
+				71F48F6B2D7D60CE00449BC0 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				71F48E2D2D780D6600449BC0 /* PBXTargetDependency */,
 				71F48E572D7AACFD00449BC0 /* PBXTargetDependency */,
+				71F48F692D7D60CE00449BC0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				715677A22CCB49A200B8AF45 /* Aminote */,
@@ -370,6 +453,28 @@
 			productReference = 71F48E4A2D7AACFB00449BC0 /* AminoteWidgetMacExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		71F48F5C2D7D60CD00449BC0 /* AminoteWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71F48F6E2D7D60CE00449BC0 /* Build configuration list for PBXNativeTarget "AminoteWatch Watch App" */;
+			buildPhases = (
+				71F48F592D7D60CD00449BC0 /* Sources */,
+				71F48F5A2D7D60CD00449BC0 /* Frameworks */,
+				71F48F5B2D7D60CD00449BC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				71F48F5E2D7D60CD00449BC0 /* AminoteWatch Watch App */,
+			);
+			name = "AminoteWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "AminoteWatch Watch App";
+			productReference = 71F48F5D2D7D60CD00449BC0 /* AminoteWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -397,6 +502,9 @@
 					71F48E492D7AACFB00449BC0 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					71F48F5C2D7D60CD00449BC0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 7156779B2CCB49A200B8AF45 /* Build configuration list for PBXProject "Aminote" */;
@@ -419,6 +527,7 @@
 				719D6ED12D53B38000278FA0 /* AminoteUITests */,
 				71F48E1B2D780D6400449BC0 /* AminoteWidgetExtension */,
 				71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */,
+				71F48F5C2D7D60CD00449BC0 /* AminoteWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -454,6 +563,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		71F48E482D7AACFB00449BC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71F48F5B2D7D60CD00449BC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -520,6 +636,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71F48F592D7D60CD00449BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -546,6 +669,12 @@
 			);
 			target = 71F48E492D7AACFB00449BC0 /* AminoteWidgetMacExtension */;
 			targetProxy = 71F48E562D7AACFD00449BC0 /* PBXContainerItemProxy */;
+		};
+		71F48F692D7D60CE00449BC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 71F48F5C2D7D60CD00449BC0 /* AminoteWatch Watch App */;
+			targetProxy = 71F48F682D7D60CE00449BC0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -947,6 +1076,71 @@
 			};
 			name = Release;
 		};
+		71F48F6C2D7D60CE00449BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AminoteWatch Watch App/AminoteWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AminoteWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 45KK5U5H4J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AminoteWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.amin.nazemzadeh.Aminote;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amin.nazemzadeh.Aminote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		71F48F6D2D7D60CE00449BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AminoteWatch Watch App/AminoteWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AminoteWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 45KK5U5H4J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AminoteWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.amin.nazemzadeh.Aminote;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amin.nazemzadeh.Aminote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1000,6 +1194,15 @@
 			buildConfigurations = (
 				71F48E5A2D7AACFD00449BC0 /* Debug */,
 				71F48E5B2D7AACFD00449BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71F48F6E2D7D60CE00449BC0 /* Build configuration list for PBXNativeTarget "AminoteWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71F48F6C2D7D60CE00449BC0 /* Debug */,
+				71F48F6D2D7D60CE00449BC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

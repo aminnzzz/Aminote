@@ -24,8 +24,9 @@ enum Status {
 class DataController: ObservableObject {
     /// The lone CloudKit container used to store all our data.
     let container: NSPersistentCloudKitContainer
-
+    #if !os(watchOS)
     var spotlightDelegate: NSCoreDataCoreSpotlightDelegate?
+    #endif
 
     @Published var selectedFilter: Filter? = .all
     @Published var selectedIssue: Issue?
@@ -135,6 +136,7 @@ class DataController: ObservableObject {
                 fatalError("Fatal error loading stores: \(error.localizedDescription)")
             }
             if let description = self?.container.persistentStoreDescriptions.first {
+                #if !os(watchOS)
                 if let coordinator = self?.container.persistentStoreCoordinator {
                     self?.spotlightDelegate = NSCoreDataCoreSpotlightDelegate(
                         forStoreWith: description,
@@ -143,6 +145,7 @@ class DataController: ObservableObject {
 
                     self?.spotlightDelegate?.startSpotlightIndexing()
                 }
+                #endif
             }
 
             #if DEBUG
