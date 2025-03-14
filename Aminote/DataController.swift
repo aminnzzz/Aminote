@@ -8,7 +8,9 @@
 import CoreData
 import StoreKit
 import SwiftUI
+#if canImport(WidgetKit)
 import WidgetKit
+#endif
 
 enum SortType: String {
     case dateCreated = "creationDate"
@@ -190,17 +192,10 @@ class DataController: ObservableObject {
     func save() {
         saveTask?.cancel()
         if container.viewContext.hasChanges {
+            #if canImport(WidgetKit)
             WidgetCenter.shared.reloadAllTimelines()
+            #endif
             try? container.viewContext.save()
-        }
-    }
-
-    func queueSave() {
-        saveTask?.cancel()
-
-        saveTask = Task { @MainActor in
-            try await Task.sleep(for: .seconds(3))
-            save()
         }
     }
 
